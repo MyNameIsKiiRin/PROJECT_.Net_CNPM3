@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PROJECT_.Net.SanXuat;
 namespace PROJECT_.Net
 {
     public partial class FRMMain : Form
@@ -19,14 +19,32 @@ namespace PROJECT_.Net
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel2.Show();
-            panel3.Hide();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panel2.Hide();
-            panel3.Show();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRMMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCongDoan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -83,9 +83,29 @@ namespace PROJECT_.Net.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_27842_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("plus-27842_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Product_Icon {
             get {
                 object obj = ResourceManager.GetObject("Product-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tikplus {
+            get {
+                object obj = ResourceManager.GetObject("tikplus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

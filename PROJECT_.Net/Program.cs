@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PROJECT_.Net.SanXuat;
 namespace PROJECT_.Net
 {
     static class Program
@@ -22,7 +22,7 @@ namespace PROJECT_.Net
                 Application.Run(new FRMMain());
                 frm.Close();
             }*/
-            Application.Run(new FRMMain());
+            Application.Run(new FRMCongDoan());
         }
     }
 }
