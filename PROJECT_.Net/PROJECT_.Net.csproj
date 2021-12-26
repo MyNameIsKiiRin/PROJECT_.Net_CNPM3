@@ -66,6 +66,12 @@
     <Compile Include="SanXuat\FRMCongDoan.Designer.cs">
       <DependentUpon>FRMCongDoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="SanXuat\FRMSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanXuat\FRMSanPham.Designer.cs">
+      <DependentUpon>FRMSanPham.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FRMLogin.resx">
       <DependentUpon>FRMLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="SanXuat\FRMCongDoan.resx">
       <DependentUpon>FRMCongDoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SanXuat\FRMSanPham.resx">
+      <DependentUpon>FRMSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
