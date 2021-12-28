@@ -22,7 +22,7 @@ namespace PROJECT_.Net
                 Application.Run(new FRMMain());
                 frm.Close();
             }*/
-            Application.Run(new FRMYeuCauSanXuat());
+            Application.Run(new FRMMain());
         }
     }
 }

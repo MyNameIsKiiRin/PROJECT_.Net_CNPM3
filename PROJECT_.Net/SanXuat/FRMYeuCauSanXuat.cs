@@ -143,7 +143,7 @@ namespace PROJECT_.Net.SanXuat
                 else
                     MessageBox.Show("Nhập dữ liệu đi bạn ");
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Đã có lỗi xảy ra");
             }
@@ -160,6 +160,17 @@ namespace PROJECT_.Net.SanXuat
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void btninan_Click(object sender, EventArgs e)
+        {
+            FRMPrint print = new FRMPrint(mayc);
+            print.Show();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ViTri = e.RowIndex;
             if (ViTri == -1) return;

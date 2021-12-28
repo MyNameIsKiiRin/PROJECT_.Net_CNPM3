@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSYeuCau" targetNamespace="http://tempuri.org/DSYeuCau.xsd" xmlns:mstns="http://tempuri.org/DSYeuCau.xsd" xmlns="http://tempuri.org/DSYeuCau.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSYeuCau" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSYeuCau" msprop:Generator_UserDSName="DSYeuCau">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="YeuCauSanXuat" msprop:Generator_TableClassName="YeuCauSanXuatDataTable" msprop:Generator_TableVarName="tableYeuCauSanXuat" msprop:Generator_TablePropName="YeuCauSanXuat" msprop:Generator_RowDeletingName="YeuCauSanXuatRowDeleting" msprop:Generator_RowChangingName="YeuCauSanXuatRowChanging" msprop:Generator_RowEvHandlerName="YeuCauSanXuatRowChangeEventHandler" msprop:Generator_RowDeletedName="YeuCauSanXuatRowDeleted" msprop:Generator_UserTableName="YeuCauSanXuat" msprop:Generator_RowChangedName="YeuCauSanXuatRowChanged" msprop:Generator_RowEvArgName="YeuCauSanXuatRowChangeEvent" msprop:Generator_RowClassName="YeuCauSanXuatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaYC" msprop:Generator_ColumnVarNameInTable="columnMaYC" msprop:Generator_ColumnPropNameInRow="MaYC" msprop:Generator_ColumnPropNameInTable="MaYCColumn" msprop:Generator_UserColumnName="MaYC" type="xs:int" minOccurs="0" />
+              <xs:element name="MaLH" msprop:Generator_ColumnVarNameInTable="columnMaLH" msprop:Generator_ColumnPropNameInRow="MaLH" msprop:Generator_ColumnPropNameInTable="MaLHColumn" msprop:Generator_UserColumnName="MaLH" type="xs:int" minOccurs="0" />
+              <xs:element name="SoLuong" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+              <xs:element name="NgayYeuCau" msprop:Generator_ColumnVarNameInTable="columnNgayYeuCau" msprop:Generator_ColumnPropNameInRow="NgayYeuCau" msprop:Generator_ColumnPropNameInTable="NgayYeuCauColumn" msprop:Generator_UserColumnName="NgayYeuCau" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NgayHoanThanh" msprop:Generator_ColumnVarNameInTable="columnNgayHoanThanh" msprop:Generator_ColumnPropNameInRow="NgayHoanThanh" msprop:Generator_ColumnPropNameInTable="NgayHoanThanhColumn" msprop:Generator_UserColumnName="NgayHoanThanh" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DoUuTien" msprop:Generator_ColumnVarNameInTable="columnDoUuTien" msprop:Generator_ColumnPropNameInRow="DoUuTien" msprop:Generator_ColumnPropNameInTable="DoUuTienColumn" msprop:Generator_UserColumnName="DoUuTien" type="xs:int" minOccurs="0" />
+              <xs:element name="TrangThai" msprop:Generator_ColumnVarNameInTable="columnTrangThai" msprop:Generator_ColumnPropNameInRow="TrangThai" msprop:Generator_ColumnPropNameInTable="TrangThaiColumn" msprop:Generator_UserColumnName="TrangThai" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

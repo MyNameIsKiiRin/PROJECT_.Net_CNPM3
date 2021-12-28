@@ -132,6 +132,7 @@ namespace PROJECT_.Net.SanXuat
                 String name = txttensp.Text;
                 decimal price = 0;
                 int total = 0;
+                if (Decimal.TryParse(txtdongia.Text, out price) == false || int.TryParse(txtsoluong.Text, out total) == false) return;
                 try
                 {
                     price = int.Parse(txtdongia.Text);
@@ -186,6 +187,10 @@ namespace PROJECT_.Net.SanXuat
             masp = (int)row["MaSP"];
             txtdongia.Text = row["DonGia"] + "";
             txtsoluong.Text = row["SoLuong"] + "";
+        }
+        private void btnchonnhanvien_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

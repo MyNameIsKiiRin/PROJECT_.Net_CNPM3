@@ -60,7 +60,7 @@ namespace PROJECT_.Net.SanXuat
             this.groupBox1.Size = new System.Drawing.Size(431, 577);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Danh Sách Sản Phẩm";
             // 
             // dataGridView1
             // 
@@ -183,7 +183,7 @@ namespace PROJECT_.Net.SanXuat
             this.btnxoasp.TabIndex = 4;
             this.btnxoasp.Text = "Xoá Sản Phẩm";
             this.btnxoasp.UseVisualStyleBackColor = true;
-            this.btnxoasp.Click += new System.EventHandler(this.button1_Click);
+            this.btnxoasp.Click += new System.EventHandler(this.btnxoasp_Click);
             // 
             // btnhuy
             // 
