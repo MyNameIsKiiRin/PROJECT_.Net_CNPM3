@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PROJECT_.Net.SanXuat;
+using PROJECT_.Net.VatTu;
 namespace PROJECT_.Net
 {
     static class Program

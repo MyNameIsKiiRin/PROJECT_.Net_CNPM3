@@ -24,5 +24,10 @@ namespace PROJECT_.Net.SanXuat
             dataGridView1.DataSource = ds.Tables["NguyenLieu"];
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            e.CellStyle.BackColor = Color.FromArgb(44, 62, 80);
+        }
     }
 }

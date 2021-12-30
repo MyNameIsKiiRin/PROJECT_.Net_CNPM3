@@ -58,6 +58,7 @@ namespace PROJECT_.Net.SanXuat
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Location = new System.Drawing.Point(552, 0);
@@ -85,9 +86,11 @@ namespace PROJECT_.Net.SanXuat
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.groupBox2.Controls.Add(this.btninan);
             this.groupBox2.Controls.Add(this.btnyc);
             this.groupBox2.Controls.Add(this.txtut);
@@ -105,14 +108,14 @@ namespace PROJECT_.Net.SanXuat
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(545, 596);
+            this.groupBox2.Size = new System.Drawing.Size(536, 596);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin";
             // 
             // btninan
             // 
-            this.btninan.Location = new System.Drawing.Point(320, 505);
+            this.btninan.Location = new System.Drawing.Point(305, 505);
             this.btninan.Name = "btninan";
             this.btninan.Size = new System.Drawing.Size(219, 63);
             this.btninan.TabIndex = 10;
@@ -140,7 +143,7 @@ namespace PROJECT_.Net.SanXuat
             // 
             // dtpkdate
             // 
-            this.dtpkdate.Location = new System.Drawing.Point(165, 347);
+            this.dtpkdate.Location = new System.Drawing.Point(150, 347);
             this.dtpkdate.Name = "dtpkdate";
             this.dtpkdate.Size = new System.Drawing.Size(374, 29);
             this.dtpkdate.TabIndex = 7;
@@ -148,7 +151,7 @@ namespace PROJECT_.Net.SanXuat
             // 
             // dtpkyc
             // 
-            this.dtpkyc.Location = new System.Drawing.Point(165, 275);
+            this.dtpkyc.Location = new System.Drawing.Point(150, 275);
             this.dtpkyc.Name = "dtpkyc";
             this.dtpkyc.Size = new System.Drawing.Size(374, 29);
             this.dtpkyc.TabIndex = 6;
@@ -156,10 +159,11 @@ namespace PROJECT_.Net.SanXuat
             // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(165, 196);
+            this.txtsoluong.Location = new System.Drawing.Point(150, 196);
             this.txtsoluong.Name = "txtsoluong";
             this.txtsoluong.Size = new System.Drawing.Size(121, 29);
             this.txtsoluong.TabIndex = 5;
+            this.txtsoluong.TextChanged += new System.EventHandler(this.txtsoluong_TextChanged);
             this.txtsoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsoluong_KeyPress);
             // 
             // label6
@@ -205,10 +209,14 @@ namespace PROJECT_.Net.SanXuat
             // cbtrangthai
             // 
             this.cbtrangthai.FormattingEnabled = true;
-            this.cbtrangthai.Location = new System.Drawing.Point(165, 117);
+            this.cbtrangthai.Items.AddRange(new object[] {
+            "Sống",
+            "Chết"});
+            this.cbtrangthai.Location = new System.Drawing.Point(150, 117);
             this.cbtrangthai.Name = "cbtrangthai";
-            this.cbtrangthai.Size = new System.Drawing.Size(121, 31);
+            this.cbtrangthai.Size = new System.Drawing.Size(175, 31);
             this.cbtrangthai.TabIndex = 3;
+            this.cbtrangthai.Text = "Chọn Trạng Thái";
             // 
             // label2
             // 
@@ -222,7 +230,7 @@ namespace PROJECT_.Net.SanXuat
             // cblohang
             // 
             this.cblohang.FormattingEnabled = true;
-            this.cblohang.Location = new System.Drawing.Point(165, 43);
+            this.cblohang.Location = new System.Drawing.Point(150, 40);
             this.cblohang.Name = "cblohang";
             this.cblohang.Size = new System.Drawing.Size(374, 31);
             this.cblohang.TabIndex = 1;
@@ -249,13 +257,15 @@ namespace PROJECT_.Net.SanXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1072, 596);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMYeuCauSanXuat";
-            this.Text = "FRMYeuCauSanXuat";
+            this.Text = "Yêu Cầu Sản Xuất";
             this.Load += new System.EventHandler(this.FRMYeuCauSanXuat_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

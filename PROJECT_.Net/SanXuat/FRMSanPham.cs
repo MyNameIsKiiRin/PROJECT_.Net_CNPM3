@@ -15,16 +15,30 @@ namespace PROJECT_.Net.SanXuat
         public FRMSanPham()
         {
             InitializeComponent();
+            LoadTheme();
         }
         private int ViTri = -1;
         DataSet ds = new DataSet();
         bool hasData = false;
         int malh = 1;
-        int masp;
+        int masp,macd;
 
+        public void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button button = (Button)btns;
+                    button.BackColor = ThemeColor.PrimaryColor;
+                    button.ForeColor = Color.White;
+                    button.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
         public void getData()
         {
-            string query = "select * from SanPham where MaLH='" + malh + "'";
+            string query = "select * from SanPham ";
             ds = DBConnect.Singletion.getData(query, "SanPham");
             dataGridView1.DataSource = ds.Tables["SanPham"];
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -34,6 +48,11 @@ namespace PROJECT_.Net.SanXuat
             cblohang.DataSource = ds2.Tables["LoHang"];
             cblohang.DisplayMember = "TenLH";
             cblohang.ValueMember = "MaLH";
+            DataSet ds3 = new DataSet();
+            ds3 = DBConnect.Singletion.getData("Select * from CongDoan ", "CongDoan");
+            cbcongdoan.DataSource = ds3.Tables["CongDoan"];
+            cbcongdoan.DisplayMember = "TenCD";
+            cbcongdoan.ValueMember = "MaCD";
             hasData = true;
         }
         public void clear()
@@ -45,11 +64,11 @@ namespace PROJECT_.Net.SanXuat
 
         private void FRMSanPham_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             getData();
             btnxoasp.Enabled = false;
             btnsuasp.Enabled = false;
             btnthemsp.Enabled = true;
-            btndinhmua.Enabled = false;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -67,16 +86,19 @@ namespace PROJECT_.Net.SanXuat
             btnxoasp.Enabled = false;
             btnsuasp.Enabled = false;
             btnthemsp.Enabled = true;
-            btndinhmua.Enabled = false;
             clear();
         }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
         private void btnsuasp_Click(object sender, EventArgs e)
         {
             try
             {
+                
                 String name = txttensp.Text;
                 decimal price = 0;
                 int total = 0;
+                if (Decimal.TryParse(txtdongia.Text, out price) == false || int.TryParse(txtsoluong.Text, out total) == false) return;
                 try
                 {
                     price = int.Parse(txtdongia.Text);
@@ -86,7 +108,7 @@ namespace PROJECT_.Net.SanXuat
                 {
                     MessageBox.Show("Dữ Liệu Nhập Không Đúng");
                 }
-                string query = "update SanPham set TenSP= N'" + name + "', DonGia=N'" + price + "',SoLuong=N'" + total + "' where MaSP=" + masp + "";
+                string query = "update SanPham set TenSP= N'" + name + "', DonGia=" + price + ",SoLuong=" + total + ",MaCD="+macd+" where MaSP=" + masp + "";
                 bool kq = DBConnect.Singletion.command(query);
                 if (kq == true)
                 {
@@ -142,7 +164,7 @@ namespace PROJECT_.Net.SanXuat
                 {
                     MessageBox.Show("Dữ Liệu Nhập Không Đúng");
                 }
-                string query = "insert into SanPham(TenSP,SoLuong,DonGia,MaLH) values(N'" + name + "','" + total + "','" + price + "','" + malh + "')";
+                string query = "insert into SanPham(TenSP,SoLuong,DonGia,MaLH,MaCD) values(N'" + name + "'," + total + "," + price + "," + malh + ","+macd+")";
                 bool kq = DBConnect.Singletion.command(query);
                 if (kq == true)
                 {
@@ -173,13 +195,19 @@ namespace PROJECT_.Net.SanXuat
             dataGridView1.DataSource = ds.Tables["SanPham"];
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        private void cbcongdoan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbcongdoan.SelectedIndex == -1) return;
+            if (hasData == false) return;
+            macd = (int)cbcongdoan.SelectedValue;
+            
+        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnxoasp.Enabled = true;
             btnsuasp.Enabled = true;
             btnthemsp.Enabled = false;
-            btndinhmua.Enabled = true;
             ViTri = e.RowIndex;
             if (ViTri == -1) return;
             DataRow row = ds.Tables["SanPham"].Rows[ViTri];
@@ -187,10 +215,23 @@ namespace PROJECT_.Net.SanXuat
             masp = (int)row["MaSP"];
             txtdongia.Text = row["DonGia"] + "";
             txtsoluong.Text = row["SoLuong"] + "";
+            macd = (int)row["MaCD"];
+
+            cbcongdoan.SelectedValue = macd.ToString();
         }
         private void btnchonnhanvien_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            e.CellStyle.BackColor = Color.FromArgb(44, 62, 80);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

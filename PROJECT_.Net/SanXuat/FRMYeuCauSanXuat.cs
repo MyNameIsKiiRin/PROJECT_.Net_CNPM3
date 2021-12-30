@@ -26,6 +26,7 @@ namespace PROJECT_.Net.SanXuat
         DateTime ngayketthuc;
         public void getData()
         {
+            
             string query = "select * from YeuCauSanXuat order by DoUuTien";
             ds = DBConnect.Singletion.getData(query, "YeuCau");
             dataGridView1.DataSource = ds.Tables["YeuCau"];
@@ -38,6 +39,19 @@ namespace PROJECT_.Net.SanXuat
             cblohang.ValueMember = "MaLH";
             hasData = true;
         }
+        public void LoadTheme()
+        {
+            foreach (Control btns in groupBox2.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button button = (Button)btns;
+                    button.BackColor = ThemeColor.PrimaryColor;
+                    button.ForeColor = Color.White;
+                    button.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
         public void clear()
         {
             txtsoluong.Text = "";
@@ -47,6 +61,7 @@ namespace PROJECT_.Net.SanXuat
         }
         private void FRMYeuCauSanXuat_Load(object sender, EventArgs e)
         {
+            LoadTheme();
             getData();
         }
 
@@ -176,6 +191,16 @@ namespace PROJECT_.Net.SanXuat
             if (ViTri == -1) return;
             DataRow row = ds.Tables["YeuCau"].Rows[ViTri];
             mayc = int.Parse(row["MaYC"] + "");
+        }
+
+        private void txtsoluong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            e.CellStyle.BackColor = Color.FromArgb(44, 62, 80);
         }
     }
 }
